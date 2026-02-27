@@ -202,7 +202,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="text-xs font-mono tracking-[0.3em] uppercase mb-5"
-            style={{ color: "#9CD5FF", paddingLeft: "78px" }}
+            style={{ color: "#9CD5FF" }}
           >
             ✦ Hello, I'm ✦
           </motion.p>
