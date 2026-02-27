@@ -11,12 +11,50 @@ const ResumeSection = () => {
     <SectionWrapper id="resume">
       <SectionHeading title="Resume" subtitle="A summary of my experience and qualifications" />
 
-      <div className="glass-card rounded-xl p-8 md:p-12 text-center max-w-2xl mx-auto">
-        <div className="mb-6">
-          <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4">
-            <span className="text-2xl">📋</span>
-          </div>
-          <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+      <motion.div
+        className="rounded-2xl p-8 md:p-12 text-center max-w-2xl mx-auto relative overflow-hidden"
+        style={{
+          background: "hsl(206 40% 14%)",
+          border: "1px solid #35587250",
+        }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ type: "spring", stiffness: 120 }}
+      >
+        {/* Background orbs */}
+        <div
+          className="absolute -top-10 -right-10 w-40 h-40 rounded-full blur-3xl opacity-10"
+          style={{ background: "#355872" }}
+        />
+        <div
+          className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full blur-3xl opacity-10"
+          style={{ background: "#7AAACE" }}
+        />
+
+        <div className="relative z-10 mb-8">
+          <motion.div
+            className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-5 text-3xl"
+            style={{
+              background: "linear-gradient(135deg, hsl(206 45% 15%), hsl(206 37% 22%))",
+              border: "1px solid #7AAACE50",
+              boxShadow: "0 0 20px #9CD5FF25",
+            }}
+            animate={{
+              boxShadow: [
+                "0 0 15px #9CD5FF20",
+                "0 0 30px #9CD5FF50",
+                "0 0 15px #9CD5FF20",
+              ],
+            }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
+            📋
+          </motion.div>
+          <h3
+            className="font-display text-xl font-semibold mb-2"
+            style={{ color: "#F7F8F0" }}
+          >
             Naveen Kumar — Resume
           </h3>
           <p className="text-sm text-muted-foreground">
@@ -24,41 +62,69 @@ const ResumeSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
           <motion.button
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, boxShadow: "0 0 25px #9CD5FF60" }}
             whileTap={{ scale: 0.97 }}
             onClick={() => setShowPreview(true)}
-            className="px-6 py-3 rounded-full bg-foreground text-background font-medium text-sm hover-lift transition-all"
+            className="px-7 py-3 rounded-full font-semibold text-sm text-white shimmer"
+            style={{
+              background: "var(--gradient-accent)",
+              boxShadow: "0 0 18px #9CD5FF40",
+            }}
           >
-            Preview Resume
+            Preview Resume ✦
           </motion.button>
           <motion.button
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, borderColor: "#9CD5FF", boxShadow: "0 0 15px #9CD5FF20" }}
             whileTap={{ scale: 0.97 }}
-            className="px-6 py-3 rounded-full border border-border text-foreground font-medium text-sm hover-lift transition-all"
+            className="px-7 py-3 rounded-full font-semibold text-sm transition-all"
+            style={{
+              border: "1px solid #7AAACE50",
+              color: "#F7F8F0",
+              background: "hsl(206 40% 16% / 0.5)",
+            }}
           >
             Download PDF
           </motion.button>
         </div>
-      </div>
+      </motion.div>
 
       <Dialog open={showPreview} onOpenChange={setShowPreview}>
-        <DialogContent className="glass-card border-border max-w-2xl max-h-[80vh] overflow-y-auto">
+        <DialogContent
+          className="max-w-2xl max-h-[80vh] overflow-y-auto rounded-2xl"
+          style={{
+            background: "hsl(206 45% 10%)",
+            border: "1px solid #35587250",
+            boxShadow: "0 20px 60px #35587250",
+          }}
+        >
           <DialogHeader>
-            <DialogTitle className="font-display text-xl">Resume Preview</DialogTitle>
+            <DialogTitle className="font-display text-xl gradient-text">Resume Preview</DialogTitle>
           </DialogHeader>
-          <div className="space-y-6 mt-4">
+          <div className="space-y-5 mt-4">
             {[
-              { section: "Education", content: "B.Tech in Artificial Intelligence & Data Science" },
-              { section: "Skills", content: "Python, TensorFlow, Power BI, Docker, Git, SQL, Machine Learning, NLP" },
-              { section: "Experience", content: "Multiple academic and competition projects in AI/ML" },
-              { section: "Interests", content: "Deep Learning, MLOps, Data Visualization, Automation" },
-            ].map((item) => (
-              <div key={item.section} className="border-b border-border pb-4 last:border-0">
-                <h4 className="text-sm font-mono text-primary uppercase tracking-wider mb-2">{item.section}</h4>
+              { section: "Education", content: "B.Tech in Artificial Intelligence & Data Science", color: "#9CD5FF" },
+              { section: "Skills", content: "Python, TensorFlow, Power BI, Docker, Git, SQL, Machine Learning, NLP", color: "#7AAACE" },
+              { section: "Experience", content: "Multiple academic and competition projects in AI/ML", color: "#9CD5FF" },
+              { section: "Interests", content: "Deep Learning, MLOps, Data Visualization, Automation", color: "#7AAACE" },
+            ].map((item, i) => (
+              <motion.div
+                key={item.section}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.08 }}
+                className="pb-5 last:pb-0"
+                style={{ borderBottom: "1px solid #35587240" }}
+              >
+                <h4
+                  className="text-xs font-mono uppercase tracking-wider mb-2"
+                  style={{ color: item.color }}
+                >
+                  {item.section}
+                </h4>
                 <p className="text-sm text-foreground/80">{item.content}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </DialogContent>
@@ -68,3 +134,4 @@ const ResumeSection = () => {
 };
 
 export default ResumeSection;
+
