@@ -7,8 +7,8 @@ const phrases = [
   "Turning Data into Decisions",
 ];
 
-const FloatingBlob = ({ className }: { className?: string }) => (
-  <div className={`floating-blob ${className}`} />
+const FloatingBlob = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
+  <div className={`floating-blob ${className}`} style={style} />
 );
 
 const HeroSection = () => {
