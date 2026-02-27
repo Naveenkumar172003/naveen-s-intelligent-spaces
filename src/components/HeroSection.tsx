@@ -287,7 +287,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05, boxShadow: "0 0 35px #9CD5FF70, 0 8px 25px #7AAACE40" }}
               whileTap={{ scale: 0.97 }}
             >
-              View Projects ✦
+              View Projects 
             </motion.a>
             <motion.a
               href="#contact"
