@@ -30,16 +30,16 @@ const SectionHeading = ({ title, subtitle }: { title: string; subtitle?: string 
 );
 
 const timeline = [
-  { year: "2021", title: "Started B.Tech", desc: "Began studying AI & Data Science" },
-  { year: "2022", title: "First ML Project", desc: "Built predictive models with Python" },
-  { year: "2023", title: "DevOps & Cloud", desc: "Expanded into CI/CD and cloud deployment" },
-  { year: "2024", title: "Advanced AI", desc: "Deep learning, NLP, and production systems" },
+  { year: "2023", title: "Start Learning ", desc: " Learned programming basics and concepts in data analythics. " },
+  { year: "2024", title: "Attended the Hackthon", desc: " Collaborated in a team to build a project under time constraints" },
+  { year: "2025", title: "Create a Project in the Data Visualization ", desc: "Built a project to visualize and analyze complex data. " },
+  { year: "2026", title: "Pursuing Internship in DevOps", desc: " Gaining practical experience in DevOps and cloud tools. " },
 ];
 
 const infoCards = [
   { label: "Education", value: "B.Tech AI & DS", icon: GraduationCap },
-  { label: "Focus", value: "ML & Automation", icon: Bot },
-  { label: "Tools", value: "Python, Power BI", icon: Wrench },
+  { label: "Focus", value: "Data Analytics, DevOps", icon: Bot },
+  { label: "Tools", value: "Python, Power BI, Docker", icon: Wrench },
   { label: "Passion", value: "Building AI Systems", icon: Zap },
 ];
 
@@ -68,9 +68,10 @@ const AboutSection = () => {
             >
               Naveen Kumar
             </span>
-            , a passionate AI & Data Science Engineer pursuing my B.Tech in Artificial Intelligence
-            and Data Science. I specialize in building intelligent systems that transform raw data
-            into actionable insights.
+            , a Proactive Frontend Developer and Data Analyst with a strong interest in UI/UX
+            design, data analytics, and modern frontend technologies. Skilled in Power BI, Python,
+            SQL, and Unix commands, with hands-on experience in file and directory management,
+            building user-friendly interfaces, and creating insightful dashboards.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -79,9 +80,8 @@ const AboutSection = () => {
             transition={{ delay: 0.2 }}
             className="text-foreground/80 leading-relaxed"
           >
-            My expertise spans machine learning, data analytics, and DevOps — enabling me to build
-            end-to-end solutions from data pipelines to production-ready applications. I believe in
-            the power of automation and data-driven decision making.
+            Passionate about blending design, data, and development to deliver intuitive and
+            impactful digital products.
           </motion.p>
 
           {/* Info cards */}

@@ -15,7 +15,7 @@ const socials = [
   {
     name: "LinkedIn",
     handle: "Naveen Kumar",
-    href: "https://linkedin.com/in/naveen-kumar",
+    href: "https://www.linkedin.com/in/naveen-kumar-4a4346295?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     icon: Linkedin,
     color: "#7AAACE",
     desc: "Connect with me professionally",

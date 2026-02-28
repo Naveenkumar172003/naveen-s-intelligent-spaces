@@ -73,12 +73,14 @@ const ResumeSection = () => {
               boxShadow: "0 0 18px #9CD5FF40",
             }}
           >
-            Preview Resume ✦
+            Preview Resume 
           </motion.button>
-          <motion.button
+          <motion.a
+            href="/Naveen kumar.pdf"
+            download="Naveen_Kumar_Resume.pdf"
             whileHover={{ scale: 1.05, borderColor: "#9CD5FF", boxShadow: "0 0 15px #9CD5FF20" }}
             whileTap={{ scale: 0.97 }}
-            className="px-7 py-3 rounded-full font-semibold text-sm transition-all"
+            className="px-7 py-3 rounded-full font-semibold text-sm transition-all inline-block"
             style={{
               border: "1px solid #7AAACE50",
               color: "#F7F8F0",
@@ -86,13 +88,13 @@ const ResumeSection = () => {
             }}
           >
             Download PDF
-          </motion.button>
+          </motion.a>
         </div>
       </motion.div>
 
       <Dialog open={showPreview} onOpenChange={setShowPreview}>
         <DialogContent
-          className="max-w-2xl max-h-[80vh] overflow-y-auto rounded-2xl"
+          className="max-w-4xl w-[95vw] max-h-[90vh] overflow-hidden rounded-2xl"
           style={{
             background: "hsl(206 45% 10%)",
             border: "1px solid #35587250",
@@ -102,30 +104,13 @@ const ResumeSection = () => {
           <DialogHeader>
             <DialogTitle className="font-display text-xl gradient-text">Resume Preview</DialogTitle>
           </DialogHeader>
-          <div className="space-y-5 mt-4">
-            {[
-              { section: "Education", content: "B.Tech in Artificial Intelligence & Data Science", color: "#9CD5FF" },
-              { section: "Skills", content: "Python, TensorFlow, Power BI, Docker, Git, SQL, Machine Learning, NLP", color: "#7AAACE" },
-              { section: "Experience", content: "Multiple academic and competition projects in AI/ML", color: "#9CD5FF" },
-              { section: "Interests", content: "Deep Learning, MLOps, Data Visualization, Automation", color: "#7AAACE" },
-            ].map((item, i) => (
-              <motion.div
-                key={item.section}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.08 }}
-                className="pb-5 last:pb-0"
-                style={{ borderBottom: "1px solid #35587240" }}
-              >
-                <h4
-                  className="text-xs font-mono uppercase tracking-wider mb-2"
-                  style={{ color: item.color }}
-                >
-                  {item.section}
-                </h4>
-                <p className="text-sm text-foreground/80">{item.content}</p>
-              </motion.div>
-            ))}
+          <div className="mt-2 w-full" style={{ height: "70vh" }}>
+            <iframe
+              src="/Naveen kumar.pdf"
+              title="Naveen Kumar Resume"
+              className="w-full h-full rounded-xl"
+              style={{ border: "1px solid #35587240", background: "#fff" }}
+            />
           </div>
         </DialogContent>
       </Dialog>

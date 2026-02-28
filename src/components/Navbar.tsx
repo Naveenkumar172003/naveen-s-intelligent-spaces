@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Linkedin, Github, Mail, Phone } from "lucide-react";
 
 const socialLinks = [
-  { icon: Linkedin, href: "https://linkedin.com/in/naveen-kumar", label: "LinkedIn", color: "#7AAACE", tooltip: null },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/naveen-kumar-4a4346295?utm_source=share_via&utm_content=profile&utm_medium=member_android", label: "LinkedIn", color: "#7AAACE", tooltip: null },
   { icon: Github, href: "https://github.com/Naveenkumar172003", label: "GitHub", color: "#9CD5FF", tooltip: null },
   { icon: Mail, href: "mailto:naveensnk067@gmail.com", label: "Email", color: "#7AAACE", tooltip: "naveensnk067@gmail.com" },
   { icon: Phone, href: "tel:+916385449637", label: "Phone", color: "#9CD5FF", tooltip: "+91 6385449637" },
