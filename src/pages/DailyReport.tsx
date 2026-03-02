@@ -260,7 +260,7 @@ const generatePDF = (reports: ReportStore, onlyKey?: string) => {
     doc.setFontSize(9);
     doc.setFont("helvetica", "bold");
     doc.text("Company:", 14, y);
-    doc.setTextColor(247, 248, 240);
+    doc.setTextColor(0, 0, 0);
     doc.setFont("helvetica", "normal");
     doc.text(entry.company || "—", 38, y);
     y += 6;
@@ -270,7 +270,7 @@ const generatePDF = (reports: ReportStore, onlyKey?: string) => {
     doc.setFont("helvetica", "bold");
     doc.text("Report:", 14, y);
     y += 5;
-    doc.setTextColor(200, 210, 220);
+    doc.setTextColor(0, 0, 0);
     doc.setFont("helvetica", "normal");
     doc.setFontSize(9);
     const lines = doc.splitTextToSize(entry.report || "—", W - 30);
