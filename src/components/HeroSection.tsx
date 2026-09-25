@@ -166,32 +166,6 @@ const HeroSection = () => {
         />
       </motion.div>
 
-      {/* Rotating ring decoration — behind the name on the left */}
-      <motion.div
-        className="absolute w-[700px] h-[700px] rounded-full pointer-events-none"
-        style={{
-          border: "1px solid #7AAACE18",
-          top: "50%",
-          left: "calc(22% + 140px)",
-          x: "-50%",
-          y: "-50%",
-        }}
-        animate={{ rotate: 360 }}
-        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-      />
-      {/* <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{
-          border: "1px solid #9CD5FF12",
-          top: "50%",
-          left: "calc(22% + 140px)",
-          x: "-50%",
-          y: "-50%",
-        }}
-        animate={{ rotate: -360 }}
-        transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-      /> */}
-
       {/* Main content — two column layout */}
       <div className="relative z-10 w-full max-w-6xl px-6 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
 
@@ -317,49 +291,19 @@ const HeroSection = () => {
           transition={{ delay: 0.5, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="flex-shrink-0 flex items-center justify-center"
         >
-          {/* Outer glow ring */}
           <div className="relative">
             <motion.div
-              className="absolute inset-0 rounded-full"
+              className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden"
               animate={{
                 boxShadow: [
-                  "0 0 30px #9CD5FF30, 0 0 60px #7AAACE15",
-                  "0 0 50px #9CD5FF50, 0 0 90px #7AAACE25",
-                  "0 0 30px #9CD5FF30, 0 0 60px #7AAACE15",
+                  "0 0 18px #7AAACE35, 0 0 42px #9CD5FF12",
+                  "0 0 32px #7AAACE70, 0 0 72px #9CD5FF28",
+                  "0 0 18px #7AAACE35, 0 0 42px #9CD5FF12",
                 ],
               }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-              style={{ borderRadius: "50%" }}
-            />
-
-            {/* Rotating border ring */}
-            <motion.div
-              className="absolute -inset-2 rounded-full"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
               style={{
-                background: "conic-gradient(from 0deg, transparent 60%, #9CD5FF60 80%, #7AAACE80 90%, transparent 100%)",
-                borderRadius: "50%",
-              }}
-            />
-            <motion.div
-              className="absolute -inset-2 rounded-full"
-              animate={{ rotate: -360 }}
-              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-              style={{
-                background: "conic-gradient(from 180deg, transparent 60%, #7AAACE40 80%, #9CD5FF50 90%, transparent 100%)",
-                borderRadius: "50%",
-              }}
-            />
-
-            {/* Photo container */}
-            <motion.div
-              className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden"
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              style={{
-                border: "3px solid #7AAACE40",
-                boxShadow: "0 0 0 1px #9CD5FF20, inset 0 0 30px #35587230",
+                border: "3px solid #7AAACE60",
               }}
             >
               <img
@@ -367,13 +311,6 @@ const HeroSection = () => {
                 alt="Naveen Kumar"
                 className="w-full h-full object-cover object-top"
                 style={{ filter: "contrast(1.05) brightness(1.02)" }}
-              />
-              {/* Subtle overlay gradient */}
-              <div
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background: "radial-gradient(circle at 70% 100%, #35587230 0%, transparent 60%)",
-                }}
               />
             </motion.div>
           </div>

@@ -48,7 +48,7 @@ const AboutSection = () => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <SectionWrapper id="about">
+    <SectionWrapper id="about" className="bg-[hsl(206_45%_9%)]">
       <SectionHeading title="About Me" subtitle="A glimpse into my journey in AI & Data Science" />
 
       <div className="grid md:grid-cols-2 gap-12 items-start">

@@ -10,6 +10,7 @@ const socialLinks = [
 ];
 
 const navItems = [
+  { label: "Experience", href: "#experience" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },

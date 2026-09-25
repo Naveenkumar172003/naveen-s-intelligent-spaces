@@ -40,9 +40,13 @@ const skillCategories = [
 ];
 
 const floatVariants = (i: number) => ({
-  y: [0, -6, 0],
+  x: [0, i % 2 === 0 ? 8 : -8, i % 3 === 0 ? -5 : 4, 0],
+  y: [0, i % 2 === 0 ? -8 : 7, i % 3 === 0 ? 5 : -4, 0],
+  rotate: [0, i % 2 === 0 ? 3 : -3, i % 3 === 0 ? -2 : 2, 0],
+  scale: [1, 1.04, 0.98, 1],
+  boxShadow: ["0 0 0px transparent", "0 0 14px #9CD5FF28", "0 0 6px #7AAACE18", "0 0 0px transparent"],
   transition: {
-    duration: 3 + (i % 3) * 0.5,
+    duration: 4.2 + (i % 4) * 0.55,
     repeat: Infinity,
     ease: "easeInOut" as const,
     delay: i * 0.18,
@@ -54,7 +58,7 @@ const SkillsSection = () => {
     <SectionWrapper id="skills" className="bg-secondary/10">
       <SectionHeading title="Skills" subtitle="Technologies and tools I work with" />
 
-      <div className="space-y-10">
+      <div className="space-y-14">
         {skillCategories.map((cat, ci) => (
           <motion.div
             key={cat.title}
@@ -64,7 +68,7 @@ const SkillsSection = () => {
             transition={{ delay: ci * 0.15, type: "spring", stiffness: 110 }}
           >
             {/* Category header */}
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-8">
               <div
                 className="w-9 h-9 rounded-xl flex items-center justify-center text-lg"
                 style={{ background: `${cat.color}18`, border: `1px solid ${cat.color}35` }}
@@ -81,7 +85,7 @@ const SkillsSection = () => {
             </div>
 
             {/* Skill icon grid */}
-            <div className="flex flex-wrap gap-5">
+            <div className="flex flex-wrap gap-x-10 gap-y-12">
               {cat.skills.map((skill, si) => (
                 <motion.div
                   key={skill.name}
